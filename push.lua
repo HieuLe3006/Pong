@@ -73,6 +73,7 @@ function push:setupCanvas(canvases)
 
   return self
 end
+
 function push:addCanvas(params)
   table.insert(self.canvases, {
     name = params.name,
@@ -86,6 +87,7 @@ function push:setCanvas(name)
   if not self._canvas then return true end
   return love.graphics.setCanvas(self:getCanvasTable(name).canvas)
 end
+
 function push:getCanvasTable(name)
   for i = 1, #self.canvases do
     if self.canvases[i].name == name then
